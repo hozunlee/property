@@ -1,0 +1,58 @@
+@import '$lib/css-reset.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'establishRetrosansOTF';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRetrosansOTF.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TAEBAEKmilkyway';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/TAEBAEKmilkyway.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Hahmlet-Regular';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Regular.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'SUIT-Regular';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: 'SUIT-Regular', 'Noto Sans KR', sans-serif;
+	-webkit-text-size-adjust: 100%;
+	min-height: 100vh;
+	margin: 0;
+	cursor: default;
+	background-attachment: fixed;
+	background-color: var(--color-bg-1);
+	background-size: 100vw 100vh;
+	background-image: radial-gradient(
+			50% 50% at 50% 50%,
+			rgba(255, 255, 255, 0.75) 0%,
+			rgba(255, 255, 255, 0) 100%
+		),
+		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
+}
+
+h1 {
+	font-family: 'Hahmlet-Regular';
+}
