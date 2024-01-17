@@ -138,6 +138,10 @@ console.log(data.results);
       <p class="text-center mt-5 mb-1">1평은 약 3.3㎡(정확히는 3.305785㎡)이다. </p>
     </div>
   </div>
+  <div class="img-box">
+    <img src="/mongol.jpeg" alt="">
+    <p>고려거란전쟁 때 서울 집 크기를 보고 후퇴한 거란족 하배압 장군</p>
+  </div>
 </section>
 
 <style>
@@ -170,7 +174,19 @@ input::-webkit-inner-spin-button {
     color : white
   }
 
-         
+  .img-box {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin : 4rem 0;
+font-size: 0.8rem;
+  }
+
+  .img-box > img {
+    width: 350px;
+  }
+
          
          
 
