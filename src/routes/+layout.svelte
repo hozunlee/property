@@ -1,10 +1,11 @@
 <script>
+	import Ga from "$lib/utils/Ga.svelte";
   import "../app.css";
 </script>
 
 
 <div class="app">
-	<!-- <Ga /> -->
+	<Ga />
 	<header>
 		<!-- <Header /> -->
 	</header>
