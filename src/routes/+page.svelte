@@ -1,5 +1,8 @@
 
 <script>
+	import { page } from "$app/stores"
+
+
 
   const convertToPyeong = (squareMeter) => {
         // 1평은 약 3.3㎡(정확히는 3.305785㎡)이다. 
@@ -13,7 +16,6 @@ let value = 0
 let output = 0
 
 $ : output = typeof value === "number" ? convertToPyeong(value).toFixed(4) : 0
-  $: console.log('output :>> ',  value );
 
 
 
@@ -74,6 +76,30 @@ console.log(data.results);
 
 
 </script>
+
+
+
+<svelte:head>
+	<title>평형계산기 | 비교 할 수 없는 Tech 기록</title>
+	<meta name="title" content="평형계산기 | hololog | 비교 할 수 없는 Tech 기록" />
+	<meta
+		name="description"
+		content=" 평형계산기 맨날 검색하다가 지쳐서 만든 ㎡을 평으로 계산하기 | holo <비교할 수 없는 tech 기록> log "
+	/>
+
+	<meta property="og:title" content="평형계산기 | Hololog" />
+	<meta property="og:description" content="평형계산기 맨날 검색하다가 지쳐서 만든 ㎡을 평으로 계산하기" />
+	<meta
+		property="og:image"
+		content="https://mjxiofcpqnyfnskvoxut.supabase.co/storage/v1/object/public/strapi-uploads/cal.001.001_1705397990658.jpeg"
+	/>
+	<meta property="og:url" content={$page.url.href} />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="평형계산기 | Hololog : 비교할 수 없는 Tech 기록" />
+	<!-- <meta name="naver-site-verification" content="ab0c76700bc2d1b64f9fc8d624acc59336e69ec1" /> -->
+</svelte:head>
+
+
 <div class="title">
   <h1>㎡을 평으로 계산하기</h1>
 
@@ -85,10 +111,10 @@ console.log(data.results);
 
     <h2>가장 많이 등장하는 전용면적</h2>
     <div class="btn-list">
-      <button on:click={() => value=17}>17㎡</button>
-      <button on:click={() => value=29} >29㎡</button>
-      <button on:click={() => value=36} >36㎡</button>
-      <button on:click={() => value=84} >84㎡</button>
+      <button class="btn-grad" on:click={() => value=17}>17㎡</button>
+      <button class="btn-grad" on:click={() => value=29} >29㎡</button>
+      <button class="btn-grad" on:click={() => value=36} >36㎡</button>
+      <button class="btn-grad" on:click={() => value=84} >84㎡</button>
     </div>
 
     <div class="bg-white shadow-md rounded-lg p-4 w-full max-w-md">
@@ -137,9 +163,16 @@ input::-webkit-inner-spin-button {
 
   }
   .btn-list button {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
-    padding: 0.3rem;
+    padding: 0.5rem;
+    background-color: #50586C;
+    color : white
   }
+
+         
+         
+         
+
 
 </style>
