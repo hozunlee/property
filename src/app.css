@@ -1,4 +1,4 @@
-@import '$lib/css-reset.css';
+/* @import '$lib/css-reset.css'; */
 
 @import 'tailwindcss';
 
@@ -7,6 +7,7 @@
 @import '@skeletonlabs/skeleton/themes/cerberus';
 
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
+
 /* 커스텀 스타일 */
 @layer base {
 	:root {

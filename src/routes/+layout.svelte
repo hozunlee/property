@@ -1,8 +1,10 @@
-<script>
-	import '@skeletonlabs/skeleton/styles/skeleton.css'
-	import '@skeletonlabs/skeleton/themes/theme-skeleton.css'
+<script lang="ts">
 	import Ga from '$lib/utils/Ga.svelte'
 	import '../app.css'
+
+	import type { LayoutProps } from './$types'
+
+	let { data, children }: LayoutProps = $props()
 </script>
 
 <div class="app">
@@ -12,14 +14,14 @@
 	</header>
 
 	<main class="container mx-auto p-4">
-		<slot />
+		{@render children()}
 	</main>
 
 	<footer class="mt-auto">
 		<p>
 			<a href="https://hololog.dev" class="text-blue-500 hover:text-blue-700 font-medium"
 				>Visit hololog</a
-			> by hojunLee
+			> by hojun Lee
 		</p>
 	</footer>
 </div>
