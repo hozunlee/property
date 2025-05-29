@@ -1,8 +1,9 @@
 <script>
-	import Ga from "$lib/utils/Ga.svelte";
-  import "../app.css";
+	import '@skeletonlabs/skeleton/styles/skeleton.css'
+	import '@skeletonlabs/skeleton/themes/theme-skeleton.css'
+	import Ga from '$lib/utils/Ga.svelte'
+	import '../app.css'
 </script>
-
 
 <div class="app">
 	<Ga />
@@ -10,16 +11,18 @@
 		<!-- <Header /> -->
 	</header>
 
-	<!-- <main> -->
-	<slot />
-	<!-- </main> -->
+	<main class="container mx-auto p-4">
+		<slot />
+	</main>
 
-	<footer>
-    <p><a href="https://hololog.dev">Visit hololog </a> by hojunLee</p>
+	<footer class="mt-auto">
+		<p>
+			<a href="https://hololog.dev" class="text-blue-500 hover:text-blue-700 font-medium"
+				>Visit hololog</a
+			> by hojunLee
+		</p>
 	</footer>
 </div>
-
-
 
 <style>
 	.app {
@@ -34,11 +37,6 @@
 		justify-content: center;
 		align-items: center;
 		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-    color: blue;
 	}
 
 	@media (min-width: 480px) {
