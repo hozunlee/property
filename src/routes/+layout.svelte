@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Ga from '$lib/utils/Ga.svelte'
+	import Header from '$lib/components/Header.svelte'
 	import '../app.css'
 
 	import type { LayoutProps } from './$types'
@@ -7,11 +8,9 @@
 	let { data, children }: LayoutProps = $props()
 </script>
 
-<div class="app">
+<div class="app flex flex-col min-h-screen">
 	<Ga />
-	<header>
-		<!-- <Header /> -->
-	</header>
+	<Header />
 
 	<main class="container mx-auto p-4">
 		{@render children()}

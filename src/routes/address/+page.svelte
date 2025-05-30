@@ -97,8 +97,8 @@
 	/>
 </svelte:head>
 
-<div class="container flex flex-col items-center justify-center">
-	<h1 class="h2 my-5 text-gray-800 mb-4">한국의 모든 주소 찾기</h1>
+<div class=" flex flex-col items-center justify-center">
+	<h1 class="h2 my-5 text-gray-800 mb-4 dark:text-white">한국의 모든 주소 찾기</h1>
 	<div class="w-full max-w-lg mx-auto mb-6">
 		<div class="relative">
 			<div
@@ -174,7 +174,7 @@
 			/>
 			<div class="relative">
 				<button
-					class="h-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-r-lg transition-colors disabled:opacity-50 flex items-center justify-center"
+					class="h-full px-4 py-3 bg-primary-100 hover:bg-primary-500 text-white rounded-r-lg transition-colors disabled:opacity-50 flex items-center justify-center"
 					type="submit"
 					disabled={isLoading}
 					aria-label="도로명주소 찾기"
