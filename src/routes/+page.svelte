@@ -51,7 +51,7 @@
 	<meta name="title" content="평형계산기 | hololog | 비교 할 수 없는 Tech 기록" />
 	<meta
 		name="description"
-		content=" 평형계산기 맨날 검색하다가 지쳐서 만든 ㎡을 평으로 계산하기 | holo <비교할 수 없는 tech 기록> log "
+		content="평형계산기 맨날 검색하다가 지쳐서 만든 ㎡을 평으로 계산하기 | holo <비교할 수 없는 tech 기록> log "
 	/>
 
 	<meta property="og:title" content="평형계산기 | Hololog" />
@@ -71,13 +71,13 @@
 
 <section class="space-y-8">
 	<div class=" flex flex-col items-center justify-center p-4 bg-gray-100 rounded-lg shadow-sm">
-		<h1 class="h2 my-5 text-gray-800 mb-4">가장 많이 등장하는 전용면적</h1>
+		<h1 class=" h3 md:h2 my-5 text-gray-800 mb-4">가장 많이 등장하는 전용면적</h1>
 
-		<div class="flex flex-wrap justify-center gap-3 mb-6">
+		<div class="flex flex-wrap justify-center gap-2 mb-6">
 			{#each [0, 17, 29, 36, 59, 84] as size}
 				<button
 					type="button"
-					class="btn preset-filled bg-primary-500"
+					class="btn preset-filled bg-primary-500 text-sm"
 					onclick={() => handlerCalculateAreas(Number(size))}>{size}㎡</button
 				>
 			{/each}
@@ -104,9 +104,7 @@
 			<div class="text-center text-3xl font-bold text-indigo-700 mb-2">
 				= {result.exclusiveAreaPyeong} <span class="text-2xl text-gray-600">평</span>
 			</div>
-			<p class="text-center text-gray-500 text-sm mt-6 mb-1">
-				1평은 약 3.3㎡(정확히는 3.305785㎡)입니다.
-			</p>
+			<p class="text-center text-gray-500 text-sm mt-6 mb-1">1평은 약 3.3㎡(정확히는 3.305785㎡)</p>
 		</div>
 		{#if result.exclusiveAreaPyeong}
 			<div class="shadow-md rounded-lg p-6 w-full max-w-md mt-5 text-black">
@@ -130,8 +128,8 @@
 					<h4 class="font-semibold">💡 참고사항</h4>
 					<ul>
 						<li>전용면적: 실제 거주 공간</li>
-						<li>공급면적: 분양가 계산 기준 (전용면적의 약 130%)</li>
-						<li>계약면적: 관리비 계산 기준 (전용면적의 약 160%)</li>
+						<li>공급면적: 분양가 계산 기준 <span class="text-xs">(전용면적의 약 130%</span>)</li>
+						<li>계약면적: 관리비 계산 기준 <span class="text-xs">(전용면적의 약 160%)</span></li>
 					</ul>
 				</div>
 			</div>

@@ -97,8 +97,8 @@
 	/>
 </svelte:head>
 
-<div class=" flex flex-col items-center justify-center">
-	<h1 class="h2 my-5 text-gray-800 mb-4 dark:text-white">한국의 모든 주소 찾기</h1>
+<div class=" flex flex-col items-center justify-center w-full">
+	<h1 class=" h3 md:h2 my-5 text-gray-800 mb-4 dark:text-white">한국의 모든 주소 찾기</h1>
 	<div class="w-full max-w-lg mx-auto mb-6">
 		<div class="relative">
 			<div
@@ -166,7 +166,7 @@
 		<div class="flex items-center gap-2">
 			<input
 				id="address-input"
-				class="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg outline-none text-gray-900 placeholder-gray-400 bg-white focus:ring-2 focus:ring-blue-500"
+				class="w-full px-1 py-2 border border-gray-300 rounded-l-lg outline-none text-gray-900 placeholder-gray-400 bg-white focus:ring-2 focus:ring-blue-500"
 				type="text"
 				placeholder="[지번, 도로명, 우편번호, 건물명] 검색"
 				bind:value={input}
