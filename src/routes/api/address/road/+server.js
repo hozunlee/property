@@ -47,14 +47,25 @@ const getRoadAddress = async (AddressOld) => {
 
 	let { results } = await response.json()
 
+	console.log('🚀 ~ getRoadAddress ~ results:', results)
 	//error 처리
 	if (results.common.errorMessage !== '정상' && results.juso.length <= 0) {
 		console.log('/api/address/road:', results.common.errorMessage, results.juso.length)
 		return []
 	}
-	//주소가 1개로 정확히 나왔을 경우
+
+	let addressObj = results?.juso.map((/** @type {{ [key: string]: string }} */ item) => {
+		return {
+			roadAddr: item.roadAddr,
+			detBdNmList: item.detBdNmList,
+			engAddr: item.engAddr,
+			zipNo: item.zipNo
+		}
+	})
+
+	// 주소가 1개로 정확히 나왔을 경우
 	if (results.juso.length === 1) {
-		return [results.juso[0].roadAddr]
+		return addressObj
 	} else {
 		// 주소가 2개 이상의 객체로 나왔을 경우
 		//building number 만 뽑아오기 ((ex) 101동)
@@ -74,7 +85,7 @@ const getRoadAddress = async (AddressOld) => {
 		if (findBuildingNumberArray) return [findBuildingNumberArray.roadAddr]
 		else {
 			let addressArr = results?.juso.map((/** @type {{ [key: string]: string }} */ addressObj) => {
-				return addressObj.roadAddr
+				return addressObj
 			})
 			return addressArr
 		}
