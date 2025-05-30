@@ -61,7 +61,7 @@
 	/>
 	<meta
 		property="og:image"
-		content="https://mjxiofcpqnyfnskvoxut.supabase.co/storage/v1/object/public/strapi-uploads/cal.001.001_1705397990658.jpeg"
+		content="https://mjxiofcpqnyfnskvoxut.supabase.co/storage/v1/object/public/strapi-uploads/ogimg01_1693478745390.jpeg"
 	/>
 	<meta property="og:url" content={page.url.href} />
 	<meta property="og:type" content="website" />
