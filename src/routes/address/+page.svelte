@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state'
 	interface Address {
 		roadAddr: string
 		zipNo: string
@@ -51,40 +52,111 @@
 	}
 </script>
 
+<svelte:head>
+	<!-- Primary Meta Tags -->
+	<title>주소검색, 영문주소변환 | 한국 주소 찾기 서비스 | Hololog</title>
+	<meta name="title" content="주소검색, 영문주소변환 | 한국 주소 찾기 서비스 | Hololog" />
+	<meta
+		name="description"
+		content="도로명, 지번, 우편번호로 쉽게 검색하는 한국 주소 찾기 서비스. 주소를 클릭 한 번으로 복사하고 영문 주소로 변환하세요. 정확한 주소 검색으로 편리한 서비스를 경험해보세요."
+	/>
+	<meta
+		name="keywords"
+		content="주소검색, 영문주소변환, 도로명주소, 지번주소, 우편번호 검색, 한국주소, 주소찾기, 주소변환, address search korea, korean address finder"
+	/>
+	<meta name="author" content="Hololog" />
+	<meta name="robots" content="index, follow" />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={page.url.href} />
+	<meta property="og:title" content="주소검색, 영문주소변환 | 한국 주소 찾기 서비스 | Hololog" />
+	<meta
+		property="og:description"
+		content="도로명, 지번, 우편번호로 쉽게 검색하는 한국 주소 찾기 서비스. 주소를 클릭 한 번으로 복사하고 영문 주소로 변환하세요."
+	/>
+	<meta
+		property="og:image"
+		content="https://mjxiofcpqnyfnskvoxut.supabase.co/storage/v1/object/public/strapi-uploads/ogimg01_1693478745390.jpeg"
+	/>
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content={page.url.href} />
+	<meta
+		property="twitter:title"
+		content="주소검색, 영문주소변환 | 한국 주소 찾기 서비스 | Hololog"
+	/>
+	<meta
+		property="twitter:description"
+		content="도로명, 지번, 우편번호로 쉽게 검색하는 한국 주소 찾기 서비스. 주소를 클릭 한 번으로 복사하고 영문 주소로 변환하세요."
+	/>
+	<meta
+		property="twitter:image"
+		content="https://mjxiofcpqnyfnskvoxut.supabase.co/storage/v1/object/public/strapi-uploads/ogimg01_1693478745390.jpeg"
+	/>
+</svelte:head>
+
 <div class="container flex flex-col items-center justify-center">
 	<h1 class="h2 my-5 text-gray-800 mb-4">한국의 모든 주소 찾기</h1>
 	<div class="w-full max-w-lg mx-auto mb-6">
 		<div class="relative">
-			<div class="text-center text-gray-600 text-sm leading-relaxed transition-all duration-300 ease-in-out {isExpanded ? 'max-h-[500px]' : 'max-h-20 overflow-hidden'}">
+			<div
+				class="text-center text-gray-600 text-sm leading-relaxed transition-all duration-300 ease-in-out {isExpanded
+					? 'max-h-[500px]'
+					: 'max-h-20 overflow-hidden'}"
+			>
 				<p>
 					한국의 모든 주소를 찾아주는 이 서비스는, 마치 어느 비 오는 화요일 오후의 조용한 카페처럼
 					조용하지만 확실한 존재감을 드러냅니다.
 					{#if isExpanded}
 						<span class="block mt-2">
-							주소 한 줄이 가진 무게와 그 속에 담긴 수많은 이야기들.
-							그것들을 클릭 한 번으로 손에 쥘 수 있게 해주죠. 우편번호는 파란 뱃지로, 도로명은 검은 글씨로,
-							영어 주소는 은은한 회색으로. 각각의 주소 조각들은 마치 소설의 한 문단처럼 정갈하게 정리되어
-							있습니다. 복사 버튼을 누르면 '복사됨!'이라는 작은 메시지가 스쳐지나가는데, 마치 페이지를 넘길
-							때의 그 만족스러운 소리처럼요. 이 서비스는 단순한 주소 검색을 넘어, 당신이 찾고자 하는 그
-							장소와의 첫 만남을 도와주는 문지기입니다. 어쩌면 당신이 찾는 건 단순한 주소가 아니라, 그곳에서
-							펼쳐질 새로운 이야기의 첫 문장일지도 모릅니다.
+							주소 한 줄이 가진 무게와 그 속에 담긴 수많은 이야기들. 그것들을 클릭 한 번으로 손에 쥘
+							수 있게 해주죠. 우편번호는 파란 뱃지로, 도로명은 검은 글씨로, 영어 주소는 은은한
+							회색으로. 각각의 주소 조각들은 마치 소설의 한 문단처럼 정갈하게 정리되어 있습니다.
+							복사 버튼을 누르면 '복사됨!'이라는 작은 메시지가 스쳐지나가는데, 마치 페이지를 넘길
+							때의 그 만족스러운 소리처럼요. 이 서비스는 단순한 주소 검색을 넘어, 당신이 찾고자 하는
+							그 장소와의 첫 만남을 도와주는 문지기입니다. 어쩌면 당신이 찾는 건 단순한 주소가
+							아니라, 그곳에서 펼쳐질 새로운 이야기의 첫 문장일지도 모릅니다.
 						</span>
 					{/if}
 				</p>
 			</div>
 			<button
-				onclick={() => isExpanded = !isExpanded}
+				onclick={() => (isExpanded = !isExpanded)}
 				class="mt-2 text-blue-600 hover:text-blue-800 text-xs font-medium transition-colors flex items-center mx-auto"
 			>
 				{#if isExpanded}
 					<span>접기</span>
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-4 w-4 ml-1"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M5 15l7-7 7 7"
+						/>
 					</svg>
 				{:else}
 					<span>더보기</span>
-					<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-4 w-4 ml-1"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M19 9l-7 7-7-7"
+						/>
 					</svg>
 				{/if}
 			</button>
